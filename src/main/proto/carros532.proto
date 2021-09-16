@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.com.zup.edu";
+option java_outer_classname = "Carros532";
+option objc_class_prefix = "HLW";
+
+package br.com.zup.edu;
+
+service Carros532Service {
+  rpc cadastra (Carros532Request) returns (Carros532Response) {}
+}
+
+message Carros532Request {
+  string placa = 1;
+  string modelo = 2;
+}
+
+message Carros532Response {
+  int64 id = 1;
+}
