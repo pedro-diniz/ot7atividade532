@@ -5,9 +5,14 @@ import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
+import javax.validation.constraints.NotBlank
+import javax.validation.constraints.Size
 
 @Entity
-class Carro(val placa: String, val modelo: String) {
+class Carro(
+    @field:NotBlank val placa: String,
+    @field:NotBlank @field:Size(max=42) val modelo: String
+    ) {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null
